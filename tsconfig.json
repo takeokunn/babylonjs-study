@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true,
+    "types": [
+      "babylonjs",
+      "babylonjs-gui",
+      "babylonjs-materials"
+    ],
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  }
+}
