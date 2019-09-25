@@ -17,13 +17,7 @@ commands:
     steps:
       - attach_workspace:
           at: ~/workspace
-  setup-git:
-    steps:
-      - run:
-          name: Set up git.
-          command: |
-            git config --global user.name "takeokunn"
-            git config --global user.email "bararararatty@gmail.com"
+
   npm-install:
     steps:
       - restore_cache:
@@ -48,6 +42,11 @@ commands:
   deploy:
     steps:
       - run:
+          name: Set up git.
+          command: |
+            git config --global user.name "takeokunn"
+            git config --global user.email "bararararatty@gmail.com"
+      - run:
           name: webpack build
           command: npm run build
       - run:
@@ -60,9 +59,8 @@ jobs:
       name: default
     steps:
       - checkout
-      - setup-git
       - npm-install
-      - persist-workspace
+      - persist-wnorkspace
   lint:
     executor:
       name: default
@@ -74,6 +72,7 @@ jobs:
       name: default
     steps:
       - attach-workspace
+      - setup-git
       - test
   deploy:
     executor:
