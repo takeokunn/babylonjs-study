@@ -72,7 +72,6 @@ jobs:
       name: default
     steps:
       - attach-workspace
-      - setup-git
       - test
   deploy:
     executor:
