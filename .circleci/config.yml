@@ -43,9 +43,7 @@ commands:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "03:ac:47:7b:6b:ba:89:86:1d:69:95:14:b8:eb:d5:44"
-            - "ee:a9:53:d9:92:7f:f1:9b:6a:e6:6d:50:45:4c:ff:45"
-            - "97:51:1f:b4:dc:06:3c:a8:af:f5:8d:b3:8d:3d:c3:b8"
+            - "d4:9e:79:63:8b:00:44:37:bc:60:ff:29:80:0e:27:aa"
       - run:
           name: Set up git.
           command: |
