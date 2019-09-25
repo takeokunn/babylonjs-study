@@ -26,7 +26,7 @@ class VideoGame {
 
         // ground
         const ground = BABYLON.Mesh.CreateGround("ground1", 100, 50, 2, this._scene);
-        ground.position.y = 1
+        ground.position.y = 1;
 
         // mat
         const mat = new BABYLON.StandardMaterial("mat", this._scene);
@@ -35,7 +35,7 @@ class VideoGame {
         mat.diffuseTexture = videoTexture;
         ground.material = mat;
 
-        this._scene.onPointerUp =  () => videoTexture.video.play()
+        this._scene.onPointerUp = () => videoTexture.video.play();
     }
 
     public doRender(): void {
