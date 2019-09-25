@@ -56,6 +56,7 @@ class Game {
     }
 }
 
+// test
 const main = (): void => {
     const elem = "renderCanvas";
     const game: Game = new Game(elem);
