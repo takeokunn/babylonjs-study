@@ -1,0 +1,66 @@
+version: 2.1
+
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:latest
+
+commands:
+  npm-install:
+    steps:
+      - restore_cache:
+          key: npm-cache-{{ checksum "package.json" }}
+      - run:
+          name: install npm
+          command: npm install
+      - save_cache:
+          key: npm-cache-{{ checksum "package.json" }}
+          paths:
+              - node_modules
+  lint:
+    steps:
+      - run:
+          name: eslint
+          command: npm run lint
+  build:
+    steps:
+      - run:
+          name: npm run build
+          command: npm run build
+  deploy:
+    steps:
+      - run:
+          name: deploy staging
+          command: npm run deploy
+
+jobs:
+  test:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - npm-install
+      - lint
+  deploy:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - npm-install
+      - lint
+      - build
+      - deploy
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test:
+        filters:
+          branches:
+            ignore: master
+      - deploy:
+        filters:
+          branches:
+            only: master
