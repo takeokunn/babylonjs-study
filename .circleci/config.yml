@@ -60,7 +60,7 @@ jobs:
     steps:
       - checkout
       - npm-install
-      - persist-wnorkspace
+      - persist-workspace
   lint:
     executor:
       name: default
