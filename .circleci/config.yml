@@ -7,12 +7,29 @@ executors:
       - image: circleci/node:latest
 
 commands:
+  persist-workspace:
+    steps:
+      - persist_to_workspace:
+          root: ~/workspace
+          paths:
+            - ./*
+  attach-workspace:
+    steps:
+      - attach_workspace:
+          at: ~/workspace
+  setup-git:
+    steps:
+      - run:
+          name: Set up git.
+          command: |
+            git config --global user.name "takeokunn"
+            git config --global user.email "bararararatty@gmail.com"
   npm-install:
     steps:
       - restore_cache:
           key: npm-cache-{{ checksum "package.json" }}
       - run:
-          name: install npm
+          name: npm install
           command: npm install
       - save_cache:
           key: npm-cache-{{ checksum "package.json" }}
@@ -23,45 +40,63 @@ commands:
       - run:
           name: eslint
           command: npm run lint
-  build:
+  test:
     steps:
       - run:
-          name: npm run build
-          command: npm run build
+          name: test
+          command: echo "exec test"
   deploy:
     steps:
+      - run:
+          name: webpack build
+          command: npm run build
       - run:
           name: deploy staging
           command: npm run deploy
 
 jobs:
+  setup:
+    executor:
+      name: default
+    steps:
+      - checkout
+      - setup-git
+      - npm-install
+      - persist-workspace
+  lint:
+    executor:
+      name: default
+    steps:
+      - attach-workspace
+      - lint
   test:
     executor:
       name: default
     steps:
-      - checkout
-      - npm-install
-      - lint
+      - attach-workspace
+      - test
   deploy:
     executor:
       name: default
     steps:
-      - checkout
-      - npm-install
-      - lint
-      - build
+      - attach-workspace
       - deploy
 
 workflows:
   version: 2
   build:
     jobs:
+      - setup
+      - lint:
+          requires:
+            - setup
       - test:
-        filters:
-          branches:
-            ignore:
-              - master
+          requires:
+            - setup
       - deploy:
-        filters:
-          branches:
-            only: master
+          requires:
+            - lint
+            - test
+          filters:
+            branches:
+              only: master
