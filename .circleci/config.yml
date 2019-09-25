@@ -46,7 +46,7 @@ commands:
           command: |
             git config --global user.name "takeokunn"
             git config --global user.email "bararararatty@gmail.com"
-            echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+            mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: webpack build
           command: npm run build
