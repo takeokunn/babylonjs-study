@@ -41,14 +41,12 @@ commands:
           command: echo "exec test"
   deploy:
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48"
       - run:
           name: Set up git.
           command: |
             git config --global user.name "takeokunn"
             git config --global user.email "bararararatty@gmail.com"
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run:
           name: webpack build
           command: npm run build
