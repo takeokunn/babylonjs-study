@@ -7,7 +7,7 @@ interface State {}
 export default class Technology extends React.Component<Props, State> {
     render() {
         return (
-            <section id="technology" className="section is-small">
+            <section id="technology" className="section is-small is-light">
                 <div className="container">
                     <div className="header">
                         <h3 className="title is-3">Technology</h3>
