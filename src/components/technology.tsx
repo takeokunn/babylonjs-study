@@ -19,37 +19,43 @@ export default class Technology extends React.Component<Props, State> {
                                 <a href="https://www.babylonjs.com/">
                                     <img alt="babylon" src="./img/babylonjs.png"/>
                                 </a>
-                                <p>babylonjs</p>
+                                <p>BabylonJS</p>
                             </div>
                             <div className="column">
                                 <a href="https://www.typescriptlang.org/">
                                     <img alt="typescript" src="./img/typescript.png"/>
                                 </a>
-                                <p>typescript</p>
+                                <p>TypeScript</p>
                             </div>
                             <div className="column">
                                 <a href="https://webpack.js.org/">
                                     <img alt="webpack" src="./img/webpack.png"/>
                                 </a>
-                                <p>webpack</p>
+                                <p>Webpack</p>
                             </div>
                             <div className="column">
                                 <a href="https://ja.reactjs.org/">
                                     <img alt="react" src="./img/react.png"/>
                                 </a>
-                                <p>react</p>
+                                <p>React</p>
                             </div>
                             <div className="column">
                                 <a href="https://bulma.io/">
                                     <img alt="bulma" src="./img/bulma.png"/>
                                 </a>
-                                <p>bulma</p>
+                                <p>Bulma</p>
                             </div>
                             <div className="column">
                                 <a href="https://circleci.com/gh/takeokunn/workflows/babylonjs-study">
                                     <img alt="circleci" src="./img/circleci.png"/>
                                 </a>
-                                <p>circleci</p>
+                                <p>CircleCI</p>
+                            </div>
+                            <div className="column">
+                                <a href="https://github.com/takeokunn/babylonjs-study">
+                                    <img alt="circleci" src="./img/github.png"/>
+                                </a>
+                                <p>GitHub</p>
                             </div>
                         </div>
                     </div>

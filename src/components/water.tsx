@@ -5,14 +5,21 @@ import WaterGame from "../game/water";
 interface Props {}
 
 interface State {
+    isStart: Boolean;
     game: WaterGame | null;
 }
 
 export default class Water extends React.Component<Props, State> {
     state = {
+        isStart: false,
         game: null
     }
     startRender() {
+        this.setState({ isStart: true });
+        this.state.game.createScene();
+        this.state.game.doRender();
+    }
+    doRender() {
         this.state.game.doRender();
     }
     stopRender() {
@@ -39,12 +46,9 @@ export default class Water extends React.Component<Props, State> {
                             <h3 className="title is-3">Water</h3>
                             <p>Babylon.jsが提供してるWaterShaderを使った。水面に木球を反射させ、また波があるように表現してみた。</p>
                             <ul>
-                                <li>
-                                    <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>
-                                </li>
-                                <li>
-                                    <button className="button is-danger" onClick={this.stopRender.bind(this)}>stop</button>
-                                </li>
+                                { !this.state.isStart && (<li><button className="button is-primary" onClick={this.startRender.bind(this)}>start</button></li>) }
+                                { this.state.isStart && (<li><button className="button is-success" onClick={this.doRender.bind(this)}>do</button></li>) }
+                                { this.state.isStart && (<li><button className="button is-danger" onClick={this.stopRender.bind(this)}>stop</button></li>) }
                             </ul>
                         </div>
                         <div className="column is-8">
