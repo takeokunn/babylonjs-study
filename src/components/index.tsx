@@ -24,11 +24,11 @@ export default class Index extends React.Component<Props, State> {
                 <Top />
                 <Link />
                 <Technology />
+                <Sandbox />
                 <Earth />
                 <Physics />
                 <Reflection />
                 <Rendering />
-                <Sandbox />
                 <Video />
                 <Water />
             </div>

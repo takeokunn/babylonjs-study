@@ -23,7 +23,7 @@ export default class Link extends React.Component<Props, State> {
                             <span className="icon">
                                 <i className="fab fa-github"></i>
                             </span>
-                            <span>Repo</span>
+                            <span>GitHub</span>
                         </a>
                     </div>
                 </div>

@@ -62,3 +62,14 @@ section#technology {
         }
     }
 }
+
+// for babylon
+section#babylon {
+    .title {
+        color: $turquoise;
+    }
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+}
