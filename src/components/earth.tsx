@@ -9,6 +9,13 @@ interface State {}
 export default class Earth extends React.Component<Props, State> {
     componentDidMount() {
         const elem = document.getElementById("earth");
+        elem.onwheel = function(event){
+            event.preventDefault();
+        };
+        // elem.onmousewheel = function(event){
+            // event.preventDefault();
+        // };
+
         const canvasSize: CanvasSize = {
             width: elem.clientWidth,
             height: elem.clientHeight
