@@ -25,7 +25,6 @@ export default class Index extends React.Component<Props, State> {
                 <Link />
                 <Technology />
                 <Sandbox />
-                <Earth />
                 <Physics />
                 <Reflection />
                 <Rendering />
