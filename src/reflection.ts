@@ -14,9 +14,7 @@ class WaterGame {
         this._engine = new BABYLON.Engine(this._canvas, true);
     }
 
-    public createScene(): void {
-
-    }
+    public createScene(): void {}
 
     public doRender(): void {
         this._engine.runRenderLoop((): void => this._scene.render());

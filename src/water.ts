@@ -19,7 +19,14 @@ class WaterGame {
         this._scene = new BABYLON.Scene(this._engine);
 
         // Camera
-        const camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 4, 100, BABYLON.Vector3.Zero(), this._scene);
+        const camera = new BABYLON.ArcRotateCamera(
+            "Camera",
+            (3 * Math.PI) / 2,
+            Math.PI / 4,
+            100,
+            BABYLON.Vector3.Zero(),
+            this._scene
+        );
         camera.attachControl(this._canvas, true);
 
         // Light

@@ -26,7 +26,7 @@ class PhysicsGame {
 
         new BABYLON.HemisphericLight("hemi", new BABYLON.Vector3(0, 1, 0), this._scene);
 
-        const randomNumber = (min :number, max :number) => {
+        const randomNumber = (min: number, max: number) => {
             if (min == max) return min;
             const random = Math.random();
             return random * (max - min) + min;

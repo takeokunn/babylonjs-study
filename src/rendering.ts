@@ -14,7 +14,14 @@ class RenderingGame {
     }
 
     public createScene(): void {
-        const camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 4, Math.PI / 2.5, 200, BABYLON.Vector3.Zero(), this._scene);
+        const camera = new BABYLON.ArcRotateCamera(
+            "Camera",
+            -Math.PI / 4,
+            Math.PI / 2.5,
+            200,
+            BABYLON.Vector3.Zero(),
+            this._scene
+        );
         camera.attachControl(this._canvas, true);
         camera.minZ = 0.1;
 
@@ -38,11 +45,15 @@ class RenderingGame {
         hdrSkybox.infiniteDistance = true;
 
         // Create mesh
-        const woodbox = BABYLON.MeshBuilder.CreateBox("plane", {
-            width: 40,
-            height: 50,
-            depth: 65
-        }, this._scene);
+        const woodbox = BABYLON.MeshBuilder.CreateBox(
+            "plane",
+            {
+                width: 40,
+                height: 50,
+                depth: 65
+            },
+            this._scene
+        );
 
         const wood = new BABYLON.PBRMaterial("wood", this._scene);
         wood.reflectionTexture = hdrTexture;
@@ -60,7 +71,9 @@ class RenderingGame {
         woodbox.material = wood;
 
         // Create rendering pipeline
-        const pipeline = new BABYLON.StandardRenderingPipeline("standard", this._scene, 1.0 / devicePixelRatio, null, [camera]);
+        const pipeline = new BABYLON.StandardRenderingPipeline("standard", this._scene, 1.0 / devicePixelRatio, null, [
+            camera
+        ]);
         pipeline.lensTexture = new BABYLON.Texture("assets/lens_dirt.jpg", this._scene);
     }
 
