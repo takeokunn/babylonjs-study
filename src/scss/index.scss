@@ -65,6 +65,9 @@ section#technology {
 
 // for babylon
 section#babylon {
+    &:nth-child(even) {
+        background-color: #f5f5f5;
+    }
     .title {
         color: $turquoise;
     }

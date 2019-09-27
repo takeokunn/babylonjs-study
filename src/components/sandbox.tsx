@@ -14,8 +14,8 @@ export default class Sandbox extends React.Component<Props, State> {
             height: elem.clientHeight
         };
         const game = new SandboxGame("sandbox", canvasSize)
-        game.createScene();
-        game.doRender();
+        // game.createScene();
+        // game.doRender();
     }
     render() {
         return (
