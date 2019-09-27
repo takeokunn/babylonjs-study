@@ -9,7 +9,7 @@ import ReflectionGame from "./reflection";
 const elem = "renderCanvas";
 
 const canvasSize: CanvasSize = {
-    width: window.innerWidth,
+    width: window.innerWidth - 100,
     height: window.innerHeight - 100
 };
 
