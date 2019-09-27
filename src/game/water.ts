@@ -1,4 +1,3 @@
-// https://www.babylonjs-playground.com/#L76FB1#0
 import * as BABYLON from "babylonjs";
 import * as MATERIALS from "babylonjs-materials";
 

@@ -4,18 +4,28 @@ import PhysicsGame from "../game/physics";
 
 interface Props {}
 
-interface State {}
+interface State {
+    game: PhysicsGame | null;
+}
 
 export default class Physics extends React.Component<Props, State> {
+    state = {
+        game: null
+    }
+    startRender() {
+        this.state.game.doRender();
+    }
+    stopRender() {
+        this.state.game.stopRender();
+    }
     componentDidMount() {
         const elem = document.getElementById("physics");
         const canvasSize: CanvasSize = {
             width: elem.clientWidth,
             height: elem.clientHeight
         };
-        const game = new PhysicsGame("physics", canvasSize)
-        // game.createScene();
-        // game.doRender();
+        this.state.game = new PhysicsGame("physics", canvasSize)
+        this.state.game.createScene();
     }
     render() {
         return (
@@ -25,6 +35,14 @@ export default class Physics extends React.Component<Props, State> {
                         <div className="column is-4">
                             <h3 className="title is-3">Physics</h3>
                             <p>物理エンジン</p>
+                            <ul>
+                                <li>
+                                    <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>
+                                </li>
+                                <li>
+                                    <button className="button is-danger" onClick={this.stopRender.bind(this)}>stop</button>
+                                </li>
+                            </ul>
                         </div>
                         <div className="column is-8">
                             <canvas id="physics"></canvas>
