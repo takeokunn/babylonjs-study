@@ -6,6 +6,7 @@
     "target": "es5",
     "allowJs": true,
     "typeRoots" : ["src/@types"],
+    "jsx": "react",
     "types": [
       "babylonjs",
       "babylonjs-gui",
