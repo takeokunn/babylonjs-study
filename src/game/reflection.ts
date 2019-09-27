@@ -1,5 +1,3 @@
-// http://babylonjs-playground.com/#XH85A9#0
-
 import * as BABYLON from "babylonjs";
 
 class ReflectionGame {

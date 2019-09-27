@@ -1,7 +1,64 @@
 @charset "utf-8";
 @import "~bulma/bulma";
+@import "~@fortawesome/fontawesome-free";
 
 body {
     font-family: Raleway-Regular, 游ゴシック体, "Yu Gothic", YuGothic, sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+
+// for top
+section#top {
+    .hero-body {
+        text-align: center;
+        h1 {
+            font-size: 48px;
+        }
+        h2.subtitle {
+            margin-top: 0;
+            font-size: 24px;
+        }
+    }
+}
+
+// for link
+section#link {
+    .header {
+        text-align: center;
+        margin-bottom: 30px;
+        h3 {
+            color: $turquoise;
+        }
+    }
+}
+
+// for technology
+section#technology {
+    .header {
+        text-align: center;
+        h3 {
+            color: $turquoise;
+        }
+        h4 {
+            color: #b5b5b5 !important;
+        }
+    }
+    .item-focus {
+        margin: 4rem auto 0;
+        max-width: 1080px;
+        .column {
+            text-align: center;
+            a {
+                margin: 1rem;
+                text-align: center;
+                img {
+                    width: 100px;
+                }
+            }
+            p {
+                padding-top: 10px;
+                font-size: 1.2rem;
+            }
+        }
+    }
 }

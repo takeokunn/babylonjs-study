@@ -3,6 +3,6 @@ import * as ReactDOM from 'react-dom';
 
 import "./scss/index.scss";
 
-import Sandbox from "./components/sandbox";
+import Index from "./components";
 
-ReactDOM.render(<Sandbox/>, document.getElementById('root'));
+ReactDOM.render(<Index/>, document.getElementById('root'));
