@@ -5,14 +5,21 @@ import EarthGame from "../game/earth";
 interface Props {}
 
 interface State {
+    isStart: Boolean;
     game: EarthGame | null;
 }
 
 export default class Earth extends React.Component<Props, State> {
     state = {
+        isStart: false,
         game: null
     }
     startRender() {
+        this.setState({ isStart: true });
+        this.state.game.createScene();
+        this.state.game.doRender();
+    }
+    doRender() {
         this.state.game.doRender();
     }
     stopRender() {
@@ -28,7 +35,6 @@ export default class Earth extends React.Component<Props, State> {
             height: elem.clientHeight
         };
         this.state.game = new EarthGame("earth", canvasSize)
-        this.state.game.createScene();
     }
     render() {
         return (
@@ -37,14 +43,11 @@ export default class Earth extends React.Component<Props, State> {
                     <div className="columns">
                         <div className="column is-4">
                             <h3 className="title is-3">Earth</h3>
-                            <p>地球儀</p>
+                            <p>地球儀のサンプル。球体に対して地図のテクスチャを貼って回転をさせている。</p>
                             <ul>
-                                <li>
-                                    <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>
-                                </li>
-                                <li>
-                                    <button className="button is-danger" onClick={this.stopRender.bind(this)}>stop</button>
-                                </li>
+                                { !this.state.isStart && (<li><button className="button is-primary" onClick={this.startRender.bind(this)}>start</button></li>) }
+                                { this.state.isStart && (<li><button className="button is-success" onClick={this.doRender.bind(this)}>do</button></li>) }
+                                { this.state.isStart && (<li><button className="button is-danger" onClick={this.stopRender.bind(this)}>stop</button></li>) }
                             </ul>
                         </div>
                         <div className="column is-8">
