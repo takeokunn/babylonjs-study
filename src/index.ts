@@ -4,12 +4,13 @@ import EarthGame from "./earth";
 import PhysicsGame from "./physics";
 import RenderingGame from "./rendering";
 import WaterGame from "./water";
+import ReflectionGame from "./reflection";
 
 const elem = "renderCanvas";
 
 const canvasSize: CanvasSize = {
-    width: 600,
-    height: 480
+    width: window.innerWidth - 100,
+    height: window.innerHeight - 100
 };
 
 const sandbox = (): void => {
@@ -48,6 +49,12 @@ const water = (): void => {
     game.doRender();
 };
 
+const reflection = (): void => {
+    const game: ReflectionGame = new ReflectionGame(elem, canvasSize);
+    game.createScene();
+    game.doRender();
+};
+
 const main = (): void => {
     // sandbox();
     // video();
@@ -55,6 +62,7 @@ const main = (): void => {
     // physics();
     // rendering();
     water();
+    // reflection();
 };
 
 window.addEventListener("DOMContentLoaded", main);
