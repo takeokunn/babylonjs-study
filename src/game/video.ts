@@ -42,6 +42,10 @@ class VideoGame {
         this._engine.runRenderLoop((): void => this._scene.render());
         window.addEventListener("resize", (): void => this._engine.resize());
     }
+
+    public stopRender(): void {
+        this._engine.stopRenderLoop();
+    }
 }
 
 export default VideoGame;

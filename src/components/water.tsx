@@ -33,7 +33,7 @@ export default class Water extends React.Component<Props, State> {
     render() {
         return (
             <section id="babylon" className="section is-medium">
-                <div className="container-fluid">
+                <div className="container">
                     <div className="columns">
                         <div className="column is-4">
                             <h3 className="title is-3">Water</h3>
