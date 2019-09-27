@@ -22,8 +22,8 @@
     "babylonjs-loaders": "^4.0.3",
     "babylonjs-materials": "^4.0.3",
     "bulma": "^0.7.5",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.10.0",
+    "react-dom": "^16.10.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
