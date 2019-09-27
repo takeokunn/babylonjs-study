@@ -46,7 +46,7 @@ export default class Technology extends React.Component<Props, State> {
                                 <p>bulma</p>
                             </div>
                             <div className="column">
-                                <a href="http://circleci.com">
+                                <a href="https://circleci.com/gh/takeokunn/workflows/babylonjs-study">
                                     <img alt="circleci" src="./img/circleci.png"/>
                                 </a>
                                 <p>circleci</p>
