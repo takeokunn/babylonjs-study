@@ -45,6 +45,7 @@ export default class Reflection extends React.Component<Props, State> {
                         <div className="column is-4">
                             <h3 className="title is-3">Reflection</h3>
                             <p>ガラス玉に空模様を反射させたサンプル。materialに屈折Textureと反射Textureをつけることによって表現してる。</p>
+                            <p><a href="https://github.com/takeokunn/babylonjs-study/blob/master/src/game/reflection.ts" target="_blank">ソースコード</a></p>
                             <ul>
                                 { !this.state.isStart && (<li><button className="button is-primary" onClick={this.startRender.bind(this)}>start</button></li>) }
                                 { this.state.isStart && (<li><button className="button is-success" onClick={this.doRender.bind(this)}>do</button></li>) }

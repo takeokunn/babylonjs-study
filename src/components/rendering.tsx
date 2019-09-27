@@ -45,6 +45,7 @@ export default class Rendering extends React.Component<Props, State> {
                         <div className="column is-4">
                             <h3 className="title is-3">HDRTexture</h3>
                             <p>HDRという形式の背景テクスチャを貼り付けたサンプル。</p>
+                            <p><a href="https://github.com/takeokunn/babylonjs-study/blob/master/src/game/rendering.ts" target="_blank">ソースコード</a></p>
                             <ul>
                                 { !this.state.isStart && (<li><button className="button is-primary" onClick={this.startRender.bind(this)}>start</button></li>) }
                                 { this.state.isStart && (<li><button className="button is-success" onClick={this.doRender.bind(this)}>do</button></li>) }

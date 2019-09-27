@@ -44,6 +44,7 @@ export default class Earth extends React.Component<Props, State> {
                         <div className="column is-4">
                             <h3 className="title is-3">Earth</h3>
                             <p>地球儀のサンプル。球体に対して地図のテクスチャを貼って回転をさせている。</p>
+                            <p><a href="https://github.com/takeokunn/babylonjs-study/blob/master/src/game/earth.ts" target="_blank">ソースコード</a></p>
                             <ul>
                                 { !this.state.isStart && (<li><button className="button is-primary" onClick={this.startRender.bind(this)}>start</button></li>) }
                                 { this.state.isStart && (<li><button className="button is-success" onClick={this.doRender.bind(this)}>do</button></li>) }

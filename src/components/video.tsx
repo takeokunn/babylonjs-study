@@ -45,6 +45,7 @@ export default class Video extends React.Component<Props, State> {
                         <div className="column is-4">
                             <h3 className="title is-3">Video</h3>
                             <p>VideoTextureでmp4を適当なオブジェクトに貼り付けたサンプル。動画はyoutube-dlとffmpegでyoutubeの動画をDL&加工した。</p>
+                            <p><a href="https://github.com/takeokunn/babylonjs-study/blob/master/src/game/video.ts" target="_blank">ソースコード</a></p>
                             <ul>
                                 { !this.state.isStart && (<li><button className="button is-primary" onClick={this.startRender.bind(this)}>start</button></li>) }
                                 { this.state.isStart && (<li><button className="button is-success" onClick={this.doRender.bind(this)}>do</button></li>) }
