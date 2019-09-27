@@ -37,7 +37,7 @@ export default class Reflection extends React.Component<Props, State> {
                     <div className="columns">
                         <div className="column is-4">
                             <h3 className="title is-3">Reflection</h3>
-                            <p></p>
+                            <p>ガラス玉に空模様を反射させたサンプル。materialに屈折Textureと反射Textureをつけることによって表現してる。</p>
                             <ul>
                                 <li>
                                     <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>

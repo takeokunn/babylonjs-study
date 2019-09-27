@@ -71,7 +71,7 @@ class WaterGame {
 
         // Sphere
         const sphereMaterial = new BABYLON.StandardMaterial("sphereMaterial", this._scene);
-        sphereMaterial.diffuseTexture = new BABYLON.Texture("//www.babylonjs.com/assets/wood.jpg", this._scene);
+        sphereMaterial.diffuseTexture = new BABYLON.Texture("assets/wood.jpg", this._scene);
 
         const sphere = BABYLON.Mesh.CreateSphere("sphere", 32, 24, this._scene);
         sphere.position.y = 20;

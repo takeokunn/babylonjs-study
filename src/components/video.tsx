@@ -37,7 +37,7 @@ export default class Video extends React.Component<Props, State> {
                     <div className="columns">
                         <div className="column is-4">
                             <h3 className="title is-3">Video</h3>
-                            <p></p>
+                            <p>VideoTextureでmp4を適当なオブジェクトに貼り付けたサンプル。動画はyoutube-dlとffmpegでyoutubeの動画をDL&加工した。</p>
                             <ul>
                                 <li>
                                     <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>

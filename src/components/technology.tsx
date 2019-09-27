@@ -45,6 +45,12 @@ export default class Technology extends React.Component<Props, State> {
                                 </a>
                                 <p>bulma</p>
                             </div>
+                            <div className="column">
+                                <a href="http://circleci.com">
+                                    <img alt="circleci" src="./img/circleci.png"/>
+                                </a>
+                                <p>circleci</p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ export default class Physics extends React.Component<Props, State> {
                     <div className="columns">
                         <div className="column is-4">
                             <h3 className="title is-3">Physics</h3>
-                            <p>物理エンジン</p>
+                            <p>物理エンジン <a href="https://lo-th.github.io/Oimo.js/">Oimo.js</a>を使ったサンプル。OimoJSPluginというのがあり、簡単に制御することが出来る。</p>
                             <ul>
                                 <li>
                                     <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>

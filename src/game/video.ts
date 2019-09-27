@@ -31,8 +31,8 @@ class VideoGame {
         // mat
         const mat = new BABYLON.StandardMaterial("mat", this._scene);
         const videoTexture = new BABYLON.VideoTexture("video", ["assets/sample.mp4"], this._scene, true, true);
-
         mat.diffuseTexture = videoTexture;
+
         ground.material = mat;
 
         this._scene.onPointerUp = () => videoTexture.video.play();

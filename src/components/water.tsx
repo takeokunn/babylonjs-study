@@ -37,7 +37,7 @@ export default class Water extends React.Component<Props, State> {
                     <div className="columns">
                         <div className="column is-4">
                             <h3 className="title is-3">Water</h3>
-                            <p>WaterShader</p>
+                            <p>Babylon.jsが提供してるWaterShaderを使った。水面に木球を反射させ、また波があるように表現してみた。</p>
                             <ul>
                                 <li>
                                     <button className="button is-success" onClick={this.startRender.bind(this)}>start</button>
