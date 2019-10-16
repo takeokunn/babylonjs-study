@@ -29,7 +29,7 @@ export default class Index extends React.Component<Props, State> {
                 <Physics />
                 <Reflection />
                 <Rendering />
-                <Video />
+                {/*<Video />*/}
                 <Water />
             </div>
         )
